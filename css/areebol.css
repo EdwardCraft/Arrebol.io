@@ -1,0 +1,159 @@
+
+
+html, body, .containerBox {
+  height: 100%;
+}
+
+
+body{
+	background: url('../img/test2.jpg'), url('../img/test1.jpg');
+	background-position: right top, left top;
+    background-repeat: no-repeat, no-repeat;
+    background-color: black;
+	height: 100%;
+	width: auto;
+	font-family: 'Anton', sans-serif;
+
+
+}
+
+
+
+
+.purple { background: black; }
+.green { background: green; }
+.blue { background: blue; }
+.black{background: #00aeae }
+.clouds{background: pink;}
+
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.container {
+    display: table;
+    vertical-align: middle;
+}
+
+.lastItem{
+	height: 100%;
+}
+
+.topItem{
+	height: 800px;
+}
+
+
+
+
+.containerBox{
+	display: flex; /* or inline-flex */
+	flex-direction: column;
+}
+
+.itemBox {
+  flex-grow: 1; /* default 0 */
+
+}
+
+.topImg{
+	position: relative; 
+	margin-top: -10.6%;
+	z-index: 1;
+	float: left; 
+}
+
+
+
+
+.boxDiv{
+    width: 50%;
+    float: left; 
+}
+
+
+
+
+.object-fit_none { object-fit: none }
+
+.testBox{
+	display:block;
+}
+
+.test{
+	width: 50%;
+	float: left; 
+}
+
+.test2{
+	width: 50%;
+	float: right; 
+}
+
+
+
+.justify{
+	letter-spacing: 3.5px;
+	text-align: justify;
+    text-justify: inter-word;
+    color: #ffffff;
+}
+
+.canvas-width{
+	width: 100%;
+}
+
+
+
+
+@media screen and (min-width:2240px){
+
+	.color-block{
+    	width: 95%;
+    	color: #fff;
+	}	
+
+	
+}
+
+
+@media screen and (max-width:2240px) {
+
+	.color-block{
+    	width: 85%;
+    	color: #fff;
+	}
+
+
+    
+}
+
+
+@media screen and (min-width:1663px){
+
+	.overlapImage{
+		position: relative; 
+		margin-top: -10.6%;
+		z-index: 1;
+		float: left; 
+	}	
+
+    
+}
+
+
+@media screen and (max-width:1663px) {
+
+	.overlapImage{
+		position: relative; 
+		margin-top: -9%;
+		margin-left: 7.5%;
+		z-index: 1;
+		float: left;
+		width: 85%; 
+	}
+
+    
+}
+
