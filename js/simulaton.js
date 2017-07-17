@@ -7,7 +7,7 @@ var canvasContext;
 var framesPerScond = 30;
 
 
-var backgroundImg;
+var img;
 var backgroundImgLoaded = false;
 
 var groundImg;
@@ -113,6 +113,8 @@ window.onload = function () {
 	console.log("page loaded");
 	canvas = document.getElementById('gameCanvas');
 	canvasContext = canvas.getContext('2d');
+	
+
 	console.log("c width  :"  + canvas.width);
 	console.log("c height :"  + canvas.height);
 
@@ -127,14 +129,15 @@ window.onload = function () {
 
 function getAssets(){
 
-	backgroundImg = new Image();
-	backgroundImg.onload = function(){
-		console.log(' image loaded ' + backgroundImg);
+	img = new Image();
+	img.onload = function(){
+		console.log(' image loaded ' + img);
 		backgroundImgLoaded = true;
-		resample_single(canvas, 900, 500, true);
+		
 	}
-	backgroundImg.src = 'img/fondo-1.png';
-
+	img.crossOrigin ='anonymous';
+	img.src = 'https://dl.dropboxusercontent.com/s/trqdv0ze9ixwx3w/fondo-1.png';
+	resample_single(canvas, 900, 500, true);
 
 	groundImg = new Image();
 	groundImg.onload = function(){
@@ -244,11 +247,11 @@ function render(){
 
 	//clear screen
 	canvasContext.clearRect( 0, 0, canvas.width, canvas.height);
-	colorRect( 0, 0, canvas.width, canvas.height, 'red');
+	colorRect( 0, 0, canvas.width, canvas.height, 'black');
 
 	//background image
 	if(backgroundImgLoaded){
-	 	canvasContext.drawImage(backgroundImg, 0, 0, );
+	 	canvasContext.drawImage(img, 0, 0, );
 	}
 
 	if(trashBinImgloaded){
