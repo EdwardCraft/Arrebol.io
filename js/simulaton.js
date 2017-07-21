@@ -115,13 +115,11 @@ window.onload = function () {
 	canvasContext = canvas.getContext('2d');
 	
 
-	console.log("c width  :"  + canvas.width);
-	console.log("c height :"  + canvas.height);
 
 	reizeCanvas();
 	getAssets();
 	simulationLoop();
-
+	
 	window.addEventListener('keydown', keyDownTextField, false);
 
 }
@@ -240,59 +238,96 @@ function update(){
 	//computer framess
 	computerFrame = (computerFrame + 1) % computerFrames.length;
 
+	playerMovement();
 
 }
 
+function playerMovement(){
+
+	if(computerPositionX <= 0){
+		computerPositionX = 0;
+	}else if(computerPositionX >= canvas.width - 150){
+		computerPositionX = canvas.width - 150;
+	}
+
+
+
+}
+
+
+
 function render(){
 
+	if(gameScreenReady())
+		simulationScreen();
+	else loadingScreen();
+
+
+}
+
+
+function gameScreenReady(){
+
+	if(backgroundImgLoaded && trashBinImgloaded && benchImgloaded
+			&& groundImgLoaded && factoryAssetsLoaded && computerAssetsLoaded
+				&& computerAssetsRightLoaded){
+		return true;
+	}
+
+	return false;
+}
+
+
+function loadingScreen(){
+
+	colorRect( 0, 0, canvas.width, canvas.height, 'black');
+
+	canvasContext.fillStyle = 'white';
+	canvasContext.font="50px Arial";
+	canvasContext.fillText('loading...' , (canvas.width / 2)  - 100, canvas.height / 2);
+
+}
+
+
+function simulationScreen(){
 	//clear screen
 	canvasContext.clearRect( 0, 0, canvas.width, canvas.height);
 	colorRect( 0, 0, canvas.width, canvas.height, 'black');
 
 	//background image
-	if(backgroundImgLoaded){
-	 	canvasContext.drawImage(img, 0, 0, );
-	}
+	 canvasContext.drawImage(img, 0, 0, );
+	
+	canvasContext.drawImage(trashBinImg, 30, canvas.height - 89, 140, 70);
+	canvasContext.drawImage(trashBinImg, canvas.width / 2, canvas.height - 89, 140, 70);
+	
 
-	if(trashBinImgloaded){
-		canvasContext.drawImage(trashBinImg, 30, canvas.height - 89, 140, 70);
-		canvasContext.drawImage(trashBinImg, canvas.width / 2, canvas.height - 89, 140, 70);
-	}
+	canvasContext.drawImage(benchImg, 200 , canvas.height - 109, 250, 90);
+	
 
-	if(benchImgloaded){
-		canvasContext.drawImage(benchImg, 200 , canvas.height - 109, 250, 90);
-	}
-
-	if(groundImgLoaded){
-		for (var i = 0; i < canvas.width; i += 90) {
-			canvasContext.drawImage(groundImg, i, canvas.height - 25, 100, 100);
-		};
+	for (var i = 0; i < canvas.width; i += 90) {
+		canvasContext.drawImage(groundImg, i, canvas.height - 25, 100, 100);
+	};
 		
-	}
 
-	if(factoryAssetsLoaded){
-		canvasContext.drawImage(factoryFrames[factoryFrame], 
-			canvas.width  - 300,  -19);
-	}
+	canvasContext.drawImage(factoryFrames[factoryFrame], 
+		canvas.width  - 300,  -19);
+	
 
-	if(computerAssetsLoaded && computerAssetsRightLoaded){
-
-		if(!left){
-			canvasContext.drawImage(computerFramesRight[computerFrame], 
-				computerPositionX, canvas.height - 135, 
-				150, 120);
+	if(!left){
+		canvasContext.drawImage(computerFramesRight[computerFrame], 
+			computerPositionX, canvas.height - 135, 
+			150, 120);
 			
-		}else{
-			canvasContext.drawImage(
-				computerFrames[computerFrame], 
-				computerPositionX, canvas.height - 135, 
-				150, 120);
-		}
-		
+	}else{
+		canvasContext.drawImage(
+			computerFrames[computerFrame], 
+			computerPositionX, canvas.height - 135, 
+			150, 120);
 	}
-
-
+		
+	
 }
+
 
 
 function colorRect(leftX, topY, width, height, color){
