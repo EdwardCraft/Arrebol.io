@@ -18,6 +18,15 @@ body{
 }
 
 
+.modal-admin {
+    /* new custom width */
+    width: 60%;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: 20%;
+    
+}
+
+
 
 
 .purple { background: black; }
@@ -93,26 +102,18 @@ body{
 
 
 
-.justify{
-	letter-spacing: 3.5px;
-	text-align: center;
-    text-justify: inter-word;
-    color: #ffffff;
-}
+
 
 .canvas-width{
 	width: 100%;
 }
 
-.img-back-2{
-	width: 100%;
-	position: relative;
-}
+
 
 .onTop{
 	z-index: 1;
 	position: absolute;
-	margin-left: 10%;
+	
 }
 
 .video-dimensions{
@@ -120,11 +121,25 @@ body{
 	height: auto;
 }
 
-.fontID{
-    color: black;
+
+
+.img-back-2{
+		width: 100%;
+		position: relative;
+}
+
+#myModal{
+	z-index: 9999;
 }
 
 
+#wrapper {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 @media screen and (min-width:2240px){
@@ -150,6 +165,7 @@ body{
 }
 
 
+
 @media screen and (min-width:1663px){
 
 	.overlapImage{
@@ -166,6 +182,17 @@ body{
 		z-index: 2;
 		float: left;
 	}
+
+	.justify{
+		letter-spacing: 3.5px;
+		text-align: center;
+    	text-justify: inter-word;
+    	color: #ffffff;
+	}
+	
+
+	
+
     
 }
 
@@ -180,6 +207,15 @@ body{
 		float: left;
 		width: 85%; 
 	}
+
+	
+	.justify{
+		letter-spacing: 3.5px;
+		text-align: justify;
+    	text-justify: inter-word;
+    	color: #ffffff;
+	}
+
 
     
 }

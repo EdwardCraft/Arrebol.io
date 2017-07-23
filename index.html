@@ -55,21 +55,35 @@
 	<div class="itemBox container color-block black topItem">
 			
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-1">
 					
 				</div>
-				<div class="col-md-8 onTop">
-					<h1 align="center">QUE ES <span style="color:#FFCCCC">ARREBOL ?</span></h1>
-					<h1 class="justify">En un mundo donde la contaminacion a 	consumido al planeta 
-						entero, por el descuido de la gente tras años de tirar basura, quedado en decadencia y ruinas... algo esta ocurriendo, la basura esta cobrando vida. 
-					</h1>
-				</div>
-				<div class="col-md-2">
+				<div class="col-md-10">
+					<div class="onTop">
+							<h1 align="center">QUE ES <span style="color:#FFCCCC">ARREBOL ?</span></h1>
+							<h1 class="justify">En un mundo donde la contaminacion a 	consumido al planeta 
+							entero, por el descuido de la gente tras años de tirar basura, quedado en decadencia y ruinas... algo esta ocurriendo, la basura esta cobrando vida. 
+							</h1>
+							<br>
+							<div id="wrapper">
+								<button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  									<h1 align="center"> 
+										<i class="fa fa-file-pdf-o fa-5x "   aria-hidden="true" ></i>
+									</h1>
+								</button>
+							</div>
+						</div>
+					</div>
 					
 				</div>
-				
+				<div class="col-md-1">
+					
+				</div>
 				<!-- 
 				<div class="col-md-6">
+					<iframe src="
+							docs/DistopiaPoluciónV.pdf" style="width:718px; height:700px;" frameborder="0">
+						</iframe>
 					<br>
 					<br>
 					<br>
@@ -124,8 +138,32 @@
 		
 
 
-	
-	
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-admin" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     	
+  
+      <div class="modal-body">
+			<div class='embed-responsive' style='padding-bottom:150%'>
+    			<object data='docs/DistopiaPoluciónV.pdf' type='application/pdf' width='100%' height='100%'></object>
+			</div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
 	
 
 	
@@ -135,5 +173,6 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
