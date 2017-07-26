@@ -103,9 +103,10 @@ var computerFrame = 0;
 
 var computerPositionX = 0;
 var computerPositionY = 0;
-var velocity = 20;
+var velocity = 5;
 
 var left = false;
+var computerWidth = 0;
 
 
 
@@ -120,7 +121,7 @@ window.onload = function () {
 	getAssets();
 	simulationLoop();
 	
-	window.addEventListener('keydown', keyDownTextField, false);
+	
 
 }
 
@@ -190,23 +191,13 @@ function getAssets(){
 		computerFramesRight[i].src = computerAssetsRight[i];
 	};
 
-	if(i === computerAssetsRight.length)
+	if(i === computerAssetsRight.length){
 		computerAssetsRightLoaded = true;
+		computerPositionX = canvas.width - 270;
+		computerWidth = 150;
+		left = true;
+	}
 
-}
-
-function keyDownTextField (e) {
-  var keyCode = e.keyCode;
-
-  if(keyCode === 39){
-  		computerPositionX += velocity;
-  		left = false;
-  }
-
-  if(keyCode === 37){
-  		computerPositionX -= velocity;
-  		left = true;
-  }
 
 }
 
@@ -244,12 +235,11 @@ function update(){
 
 function playerMovement(){
 
-	if(computerPositionX <= 0){
-		computerPositionX = 0;
-	}else if(computerPositionX >= canvas.width - 150){
-		computerPositionX = canvas.width - 150;
-	}
+	computerPositionX -= velocity;
 
+	if(computerPositionX + computerWidth < 0){
+		computerPositionX = canvas.width - 270;
+	}
 
 
 }
@@ -316,13 +306,13 @@ function simulationScreen(){
 	if(!left){
 		canvasContext.drawImage(computerFramesRight[computerFrame], 
 			computerPositionX, canvas.height - 135, 
-			150, 120);
+			computerWidth, 120);
 			
 	}else{
 		canvasContext.drawImage(
 			computerFrames[computerFrame], 
 			computerPositionX, canvas.height - 135, 
-			150, 120);
+			computerWidth, 120);
 	}
 		
 	

@@ -141,6 +141,34 @@ body{
   justify-content: center;
 }
 
+.avatar {
+	position: absolute;
+	transform: translatey(0px);
+	animation: float 2s ease-in-out infinite;
+	z-index: 50;
+}
+
+.shadow{
+	z-index: 2;
+}
+
+
+@keyframes float {
+	0% {
+		
+		transform: translatey(0px);
+	}
+	50% {
+		
+		transform: translatey(-20px);
+	}
+	100% {
+		
+		transform: translatey(0px);
+	}
+}
+
+
 
 @media screen and (min-width:2240px){
 
