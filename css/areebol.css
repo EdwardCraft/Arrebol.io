@@ -6,13 +6,20 @@ html, body, .containerBox {
 
 
 body{
-	background: url('../img/test2.jpg'), url('../img/test1.jpg');
+	/*background: url('../img/test2.jpg'), url('../img/test1.jpg');
 	background-position: right top, left top;
     background-repeat: no-repeat, no-repeat;
     background-color: black;
 	height: 100%;
 	width: auto;
-	font-family: 'Anton', sans-serif;
+	font-family: 'Anton', sans-serif;*/
+
+	background: url('../img/fondo-2.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Anton', sans-serif
 }
 
 
@@ -29,7 +36,7 @@ body{
 
 
 
-.purple { background: black; }
+.purple { background: #184d4d; }
 .green { background: green; }
 .blue { background: blue; }
 .black{background: #184d4d; }
@@ -152,11 +159,11 @@ body{
 	position: absolute;
 	transform: translatey(0px);
 	animation: float 2s ease-in-out infinite;
-	z-index: 50;
+	z-index: 9999;
 }
 
 .shadow{
-	z-index: 2;
+	z-index: 9998;
 }
 
 
@@ -205,8 +212,8 @@ body{
 
 	.overlapImage{
 		position: relative; 
-		margin-top: -10.5%;
-		z-index: 10;
+		margin-top: -10.6%;
+		z-index: 1;
 		float: left; 
 	}	
 
